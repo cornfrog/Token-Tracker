@@ -4,10 +4,6 @@ The goal of Token Tracker is to give a more streamlined, user-friendly way of le
 
 Using both the [Coinbase Advanced Trade Websocket](https://docs.cloud.coinbase.com/advanced-trade-api/docs/ws-overview) and the [NewsAPI](https://newsapi.org/) Token Tracker gets the most up-to-date prices **AND** the most relevant information about whatever currency you are interested in.
 
-## Screenshot
----
-#### TODO: [ App Screenshot Here ]
-
 ## Installation
 ---
 To install Token Tracker to your machine run the following command from your terminal:
