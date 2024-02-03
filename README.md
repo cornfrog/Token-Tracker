@@ -1,4 +1,4 @@
-#<p align="center">`Token Tracker`</p>
+# <p align="center">`Token Tracker`</p>
 ---
 Token Tracker is a REACT and Express.js webapp that aims to give a more streamlined, user-friendly way of learning about cryptocurrencies! 
 
