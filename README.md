@@ -1,4 +1,4 @@
-#<p align="center">`Token Tracker`</p>
+# <p align="center">`Token Tracker`</p>
 ---
 The goal of Token Tracker is to give a more streamlined, user-friendly way of learning about cryptocurrencies! 
 
