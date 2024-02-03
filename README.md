@@ -1,6 +1,6 @@
 #<p align="center">`Token Tracker`</p>
 ---
-The goal of Token Tracker is to give a more streamlined, user-friendly way of learning about cryptocurrencies! 
+Token Tracker is a REACT/Express.js webapp that aims to provide a more streamlined, user-friendly way of learning about cryptocurrencies! 
 
 Using both the [Coinbase Advanced Trade Websocket](https://docs.cloud.coinbase.com/advanced-trade-api/docs/ws-overview) and the [NewsAPI](https://newsapi.org/) Token Tracker gets the most up-to-date prices **AND** the most relevant information about whatever currency you are interested in.
 
