@@ -6,7 +6,7 @@ Using both the [Coinbase Advanced Trade Websocket](https://docs.cloud.coinbase.c
 
 ## Screenshot
 ---
-####TODO: [ App Screenshot Here ]
+#### TODO: [ App Screenshot Here ]
 
 ## Installation
 ---
