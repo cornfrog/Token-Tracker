@@ -2,7 +2,7 @@
 ---
 Token Tracker is a REACT and Express.js webapp that aims to give a more streamlined, user-friendly way of learning about cryptocurrencies! 
 
-Using both the [Coinbase Advanced Trade Websocket](https://docs.cloud.coinbase.com/advanced-trade-api/docs/ws-overview) and the [NewsAPI](https://newsapi.org/) Token Tracker gets the most up-to-date prices **AND** the most relevant information about whatever currency/coin you are interested in.
+Using both the [Coinbase Advanced Trade Websocket](https://docs.cloud.coinbase.com/advanced-trade-api/docs/ws-overview) and the [NewsAPI](https://newsapi.org/) Token Tracker gets the most up-to-date prices **AND** the most relevant information about whatever currency/coin you are interested in.m
 
 ## Installation
 
@@ -20,7 +20,19 @@ $ yarn install
 2. In the root of the **server** folder, create the `token-tracker_development` PostgreSQL database:
 ```
 $ cd ./Token-Tracker/server/
-$ createdb token-tracker_development
+$ TODOs: 
+
+Nick and Rob: 
+
+> Finish Review Form 
+> Start user upload profile picture 
+
+
+Marlon and Corey:
+
+> Finish User Profile Page 
+    * render reviews list 
+> Add delete builds on profile page token-tracker_development
 ``` 
 3. While still in the **server** folder, run the following `yarn` command to create tables used in the `token-tracker_development` database:
 ```
