@@ -10,6 +10,8 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 
+import TickerList from "./layout/TickerList";
+
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
   const fetchCurrentUser = async () => {
@@ -30,7 +32,7 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <h2>Hello from react</h2>
+          <TickerList />
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
