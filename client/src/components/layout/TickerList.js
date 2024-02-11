@@ -25,10 +25,12 @@ const TickerList = (props) => {
             const currencyListFetch = await fetch("https://api.coinbase.com/v2/currencies/crypto")
             const parsedCurrencyList = await currencyListFetch.json()
             const arrayOfCoins = parsedCurrencyList.data
+            console.log(arrayOfCoins[0])
             const defaultCoins = arrayOfCoins.map((coin) => {
                 return {
                     name: coin.name,
                     code: coin.code,
+                    CB_id: coin.sort_index,
                     channel: `${coin.code}-USD`
                 }
             })
