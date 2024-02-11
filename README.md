@@ -19,20 +19,7 @@ $ yarn install
 ```
 2. In the root of the **server** folder, create the `token-tracker_development` PostgreSQL database:
 ```
-$ cd ./Token-Tracker/server/
-$ TODOs: 
-
-Nick and Rob: 
-
-> Finish Review Form 
-> Start user upload profile picture 
-
-
-Marlon and Corey:
-
-> Finish User Profile Page 
-    * render reviews list 
-> Add delete builds on profile page token-tracker_development
+$ cd ./Token-Tracker/server/token-tracker_development
 ``` 
 3. While still in the **server** folder, run the following `yarn` command to create tables used in the `token-tracker_development` database:
 ```
