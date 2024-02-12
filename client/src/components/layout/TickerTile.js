@@ -4,7 +4,10 @@ import formatCurrentPrice from "../../services/formatCurrentPrice"
 const TickerTile = (props) => {
     const channel = props.channel
     const coinName = props.coinName
-    const [currentPrice, setCurrentPrice] = useState("---")
+    const [currentPrice, setCurrentPrice] = useState({
+        price: "---",
+        status: ""
+    })
     let connection = new WebSocket('wss://ws-feed.exchange.coinbase.com')
 
     connection.onopen = () => {
@@ -25,13 +28,15 @@ const TickerTile = (props) => {
         const messageFromSocket = JSON.parse(event.data)
         const priceFromSocket = messageFromSocket.price
         if (messageFromSocket.type === "ticker") {
-            const formattedPrice = formatCurrentPrice(priceFromSocket)
+            const formattedPrice = formatCurrentPrice(currentPrice.price, priceFromSocket)
             setCurrentPrice(formattedPrice)
         }
     }
 
+    console.log(currentPrice)
+
     return (
-        <p>Current Price of {coinName} - {currentPrice}</p>
+        <p className="price-ticker">Current Price of {coinName} - <span className={currentPrice.status}>{currentPrice.price}</span></p>
     )
 }
 
