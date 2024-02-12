@@ -6,7 +6,7 @@ class Seeder {
   static async seed() {
     // include individual seed commands here
     // -- uncomment below line to seed users
-    // await UserSeeder.seed()
+    await UserSeeder.seed()
     console.log("Done!");
     await connection.destroy();
   }
