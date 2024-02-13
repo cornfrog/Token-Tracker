@@ -1,4 +1,4 @@
-const serializeCoins = (arrayOfCoins) => {
+const parseCoins = (arrayOfCoins) => {
     const serializedArrayOfCoins = []
     for (const coin of arrayOfCoins) {
         serializedArrayOfCoins.push(serializeCoin(coin))
@@ -6,7 +6,7 @@ const serializeCoins = (arrayOfCoins) => {
     return serializedArrayOfCoins
 }
 
-const serializeCoin = (coin) => {
+const parseCoin = (coin) => {
     const allowedAttributes = ["name", "code", "sort_index"]
     const serializedCoin = {} 
     for(const attribute of allowedAttributes){
@@ -15,4 +15,4 @@ const serializeCoin = (coin) => {
     return serializedCoin
 }
 
-export default serializeCoins
+export default parseCoins
