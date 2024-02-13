@@ -38,6 +38,7 @@
       justify-content: space-evenly;
       align-items: center;
       font-size: 1.55rem;
+
       .menu-bar-link {
         padding: .25rem .5rem;
         border: .25rem solid white;
@@ -207,15 +208,21 @@
           color: rgb(255, 0, 0);
         }
 
-
       }
 
     }
 
+    .tracked-coins-header {
+      text-align: center;
+      text-decoration: underline;
+    }
+
     .ticker-list {
-      border: 1px white solid;
+      margin: 0 auto;
+      padding: .5rem 1rem;
       border-radius: 1rem;
       text-align: center;
+      width: fit-content;
 
       .price-ticker {
         font-size: 1.25rem;

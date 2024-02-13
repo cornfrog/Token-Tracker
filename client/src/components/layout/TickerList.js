@@ -21,13 +21,16 @@ const TickerList = (props) => {
     ]
 
     const tickerList = defaultCoins.map((coin) => {
-        return <TickerTile channel={coin.channel} coinName={coin.name} key={coin.id}/>
+        return <TickerTile channel={coin.channel} coinName={coin.name} key={coin.id} coinID={coin.id}/>
     })
 
     return (
-        <div className="ticker-list">
-            {tickerList}
-        </div>
+        <>
+            <h1 className="tracked-coins-header">Tracked Coins</h1>
+            <div className="ticker-list">
+                {tickerList}
+            </div>
+        </>
     )
 }
 
