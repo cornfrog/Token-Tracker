@@ -1,3 +1,7 @@
+// get registration working with username + email
+// THEN get sign in with username  
+
+
 import local from "passport-local";
 
 import User from "../models/User.js";

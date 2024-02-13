@@ -1,14 +1,78 @@
-@import "./foundation/settings";
-@import "~foundation-sites/scss/foundation";
-@include foundation-everything;
-// place global css here
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@media (max-width: 576px) {
+  body {
+    background-color: black;
+    color: white;
+
+    .nav-bar-mobile {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .app-title {
+        font-size: 1.75rem;
+        text-decoration: underline;
+      }
+
+      .profile-pic:hover {
+        cursor: pointer;
+      }
+    }
+
+    .ticker-list {
+      border: 1px white solid;
+      border-radius: 1rem;
+      text-align: center;
+      .price-ticker {
+        font-size: 1.25rem;
+        
+        .price-up {
+          color: rgb(0, 200, 0);
+        }
+
+        .price-down {
+          color: rgb(255, 0, 0);
+        }
+      }
+    }
+  }
 }
 
-:root {
-  -moz-tab-size: 4;
-  tab-size: 4;
+@media (min-width: 576px) and (max-width: 768px) {
+  body {
+    background-color: green;
+
+    .nav-bar-mobile {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+
+  .nav-bar-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  body {
+    background-color: orange;
+  }
+
+  .nav-bar-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-color: purple;
+  }
+
+  .nav-bar-mobile {
+    display: none;
+  }
 }
