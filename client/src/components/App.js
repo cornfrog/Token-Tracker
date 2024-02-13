@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { hot } from "react-hot-loader/root";
-
+import AuthenticatedRoute from "../components/authentication/AuthenticatedRoute"
 import "../assets/scss/main.scss";
 
 import getCurrentUser from "../services/getCurrentUser";
@@ -36,6 +36,7 @@ const App = (props) => {
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+        <AuthenticatedRoute exact path="/login" component={SignInForm} />
       </Switch>
     </Router>
   );
