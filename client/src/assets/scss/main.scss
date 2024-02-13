@@ -10,7 +10,9 @@
 
       .app-title {
         font-size: 1.75rem;
+        user-select: none;
       }
+
       .app-title:hover {
         cursor: pointer;
       }
@@ -23,6 +25,100 @@
       .profile-pic:hover {
         cursor: pointer;
         box-shadow: 0px 0px 20px white;
+      }
+    }
+
+    .sign-in-error {
+      border-radius: 1rem;
+      padding: .5rem 0;
+      border: .75rem solid rgb(150, 0, 0);
+      text-align: center;
+      background-color: rgb(200, 0, 0);
+      color: white;
+      font-size: 1.55rem;
+    }
+
+    .login {
+      border: .25rem solid white;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .login-form {
+        display: grid;
+        grid-template-columns: auto;
+        row-gap: 1.75rem;
+
+        label {
+          font-size: 1.5rem;
+
+          .sign-in-error {
+            color: blue;
+          }
+        }
+
+        input {
+          font-size: 1.15rem;
+        }
+
+        .error {
+          color: rgb(255, 0, 0);
+        }
+
+        .sign-in {
+          display: flex;
+          justify-self: center;
+          align-items: center;
+          margin-bottom: 2rem;
+
+          .button {
+            background-color: transparent;
+            color: white;
+            font-size: 1.25rem;
+            padding: .75rem 1.25rem;
+            border: .4rem solid rgba(0, 200, 0, 0.487);
+            border-radius: 1rem;
+            transition: border-color .25s ease-in-out;
+          }
+
+          .button:hover {
+            cursor: pointer;
+            border: .4rem solid rgb(0, 200, 0);
+            color: rgb(0, 200, 0);
+          }
+
+          .button:active {
+            transform: translateY(.25rem);
+          }
+        }
+      }
+
+      .register-account {
+        text-align: center;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        .button {
+          text-decoration: none;
+          background-color: transparent;
+          color: white;
+          font-size: 1rem;
+          padding: .5rem .75rem;
+          border: .4rem solid rgba(0, 200, 0, 0.487);
+          border-radius: 1rem;
+          transition: border-color .25s ease-in-out;
+        }
+
+        .button:hover {
+          cursor: pointer;
+          border: .4rem solid rgb(0, 200, 0);
+          color: rgb(0, 200, 0);
+        }
+
+        .button:active {
+          transform: translateY(.25rem);
+        }
       }
     }
 
@@ -39,7 +135,7 @@
         }
 
         .price-down {
-          color: rgb(255, 0, 0);
+          color: rgb(200, 0, 0);
         }
       }
     }

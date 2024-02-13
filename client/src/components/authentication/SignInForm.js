@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import config from "../../config";
 
@@ -19,14 +19,14 @@ const SignInForm = () => {
     if (!email.match(emailRegexp)) {
       newErrors = {
         ...newErrors,
-        email: "is invalid",
+        email: " * is invalid",
       };
     }
 
     if (password.trim() === "") {
       newErrors = {
         ...newErrors,
-        password: "is required",
+        password: " * is required",
       };
     }
 
@@ -75,25 +75,23 @@ const SignInForm = () => {
   if (shouldRedirect) {
     location.href = "/";
   }
-
+  
   return (
     <>
-      <div className="grid-container" onSubmit={onSubmit}>
+    {credentialsErrors ? <p className="sign-in-error">{credentialsErrors}</p> : null}
+      <div className="login" onSubmit={onSubmit}>
         <h1>Sign In</h1>
-
-        {credentialsErrors ? <p className="callout alert">{credentialsErrors}</p> : null}
-
-        <form>
+        <form className="login-form">
           <div>
             <label>
-              Email
+              Email: <br />
               <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
               <FormError error={errors.email} />
             </label>
           </div>
           <div>
             <label>
-              Password
+              Password: <br />
               <input
                 type="password"
                 name="password"
@@ -103,12 +101,14 @@ const SignInForm = () => {
               <FormError error={errors.password} />
             </label>
           </div>
-          <div>
+          <div className="sign-in">
             <input type="submit" className="button" value="Sign In" />
           </div>
         </form>
+        <div className="register-account">
+          <p>Don't have an account? <a href="/users/new" className="button">Sign Up!</a></p>
+        </div>
       </div>
-      <p>Don't have an account? <a href="/users/new">Sign Up!</a></p>
     </>
   );
 };
