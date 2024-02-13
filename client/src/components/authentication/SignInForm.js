@@ -77,36 +77,39 @@ const SignInForm = () => {
   }
 
   return (
-    <div className="grid-container" onSubmit={onSubmit}>
-      <h1>Sign In</h1>
+    <>
+      <div className="grid-container" onSubmit={onSubmit}>
+        <h1>Sign In</h1>
 
-      {credentialsErrors ? <p className="callout alert">{credentialsErrors}</p> : null}
+        {credentialsErrors ? <p className="callout alert">{credentialsErrors}</p> : null}
 
-      <form>
-        <div>
-          <label>
-            Email
-            <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
-            <FormError error={errors.email} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              value={userPayload.password}
-              onChange={onInputChange}
-            />
-            <FormError error={errors.password} />
-          </label>
-        </div>
-        <div>
-          <input type="submit" className="button" value="Sign In" />
-        </div>
-      </form>
-    </div>
+        <form>
+          <div>
+            <label>
+              Email
+              <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
+              <FormError error={errors.email} />
+            </label>
+          </div>
+          <div>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                value={userPayload.password}
+                onChange={onInputChange}
+              />
+              <FormError error={errors.password} />
+            </label>
+          </div>
+          <div>
+            <input type="submit" className="button" value="Sign In" />
+          </div>
+        </form>
+      </div>
+      <p>Don't have an account? <a href="/users/new">Sign Up!</a></p>
+    </>
   );
 };
 
