@@ -10,7 +10,9 @@
 
       .app-title {
         font-size: 1.75rem;
-        text-decoration: underline;
+      }
+      .app-title:hover {
+        cursor: pointer;
       }
 
       .profile-pic {

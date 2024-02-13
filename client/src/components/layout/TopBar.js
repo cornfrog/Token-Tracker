@@ -6,8 +6,11 @@ import SignOutButton from "../authentication/SignOutButton";
 
 const TopBar = ({ user }) => {
   const goToLogin = () => {
-    console.log("click")
     return window.location.href = "/login"
+  }
+
+  const goToHomePage = () => {
+    return window.location.href = "/"
   }
 
   const signedOutImage = <img src={signedOutImagePath} onClick={() => {goToLogin()}} className="profile-pic" />
@@ -20,7 +23,7 @@ const TopBar = ({ user }) => {
 
   return (
     <div className="nav-bar-mobile">
-      <header className="app-title">Token Tracker</header>
+      <header className="app-title" onClick={() => {goToHomePage()}}>Token Tracker</header>
       <ul>{user ? authenticatedListItems : signedOutImage}</ul>
     </div>
   );
