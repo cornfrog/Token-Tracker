@@ -1,15 +1,17 @@
 const formatCurrentPrice = (currentPrice, incomingPrice) => {
     const formattedPrice = {}
-    const currentPriceAsFloat = parseFloat(currentPrice.replace(/[^\d.]/g, ''))
+    const formattedCurrentPrice = currentPrice.replace(/[^\d.]/g, '')
+    const currentPriceAsFloat = parseFloat(formattedCurrentPrice)
     const priceAsFloat = parseFloat(incomingPrice)
-    if(priceAsFloat >= currentPriceAsFloat){
+    if (priceAsFloat > currentPriceAsFloat) {
         formattedPrice.status = "price-up"
-    }
-    else{
+    } else if (priceAsFloat === currentPriceAsFloat) {
+        formattedPrice.status = "price-same"
+    } else {
         formattedPrice.status = "price-down"
     }
-    formattedPrice.price = priceAsFloat.toLocaleString("en-US", {style:"currency", currency:"USD"})
-    return formattedPrice 
+    formattedPrice.price = priceAsFloat.toLocaleString("en-US", { style: "currency", currency: "USD" })
+    return formattedPrice
 }
 
 export default formatCurrentPrice

@@ -227,8 +227,15 @@
           padding: .15rem .25rem;
         }
 
+        .price-same {
+          background-color: rgb(139, 139, 139);
+          color: black;
+          border-radius: .25rem;
+          padding: .15rem .25rem;
+        }
+
         .price-down {
-          background-color: rgb(200, 0, 0);
+          background-color: rgb(255, 0, 0);
           color: black;
           border-radius: .25rem;
           padding: .15rem .25rem;

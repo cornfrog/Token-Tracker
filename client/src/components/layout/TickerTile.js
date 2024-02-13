@@ -30,10 +30,8 @@ const TickerTile = (props) => {
         connection.onmessage = (event) => {
             const messageFromSocket = JSON.parse(event.data)
             const priceFromSocket = messageFromSocket.price
-            if (messageFromSocket.type === "ticker") {
-                const formattedPrice = formatCurrentPrice(currentPrice.price, priceFromSocket)
-                setCurrentPrice(formattedPrice)
-            }
+            const formattedPrice = formatCurrentPrice(currentPrice.price, priceFromSocket)
+            setCurrentPrice(formattedPrice)
         }
 
         return () => {
