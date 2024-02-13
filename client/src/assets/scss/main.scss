@@ -13,8 +13,14 @@
         text-decoration: underline;
       }
 
+      .profile-pic {
+        transition: box-shadow .5s ease-in-out;
+        border-radius: 50%;
+      }
+
       .profile-pic:hover {
         cursor: pointer;
+        box-shadow: 0px 0px 20px white;
       }
     }
 
@@ -22,9 +28,10 @@
       border: 1px white solid;
       border-radius: 1rem;
       text-align: center;
+
       .price-ticker {
         font-size: 1.25rem;
-        
+
         .price-up {
           color: rgb(0, 200, 0);
         }
