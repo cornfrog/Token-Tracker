@@ -7,14 +7,14 @@ const ErrorList = (props) => {
     const listItems = errantFields.map((field) => {
       index++;
       return (
-        <li key={index}>
+        <p key={index}>
           {field} {props.errors[field]}
-        </li>
+        </p>
       );
     });
     return (
-      <div className="callout alert">
-        <ul>{listItems}</ul>
+      <div className="error-list">
+        {listItems}
       </div>
     );
   } else {

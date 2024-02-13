@@ -27,34 +27,34 @@ const RegistrationForm = () => {
     if (!email.match(emailRegexp)) {
       newErrors = {
         ...newErrors,
-        email: "is invalid",
+        email: " * is invalid",
       };
     }
 
     if(username.trim() == "") {
       newErrors = {
         ...newErrors,
-        username: "is required",
+        username: " * is required",
       };
     }
 
     if (password.trim() == "") {
       newErrors = {
         ...newErrors,
-        password: "is required",
+        password: " * is required",
       };
     }
 
     if (passwordConfirmation.trim() === "") {
       newErrors = {
         ...newErrors,
-        passwordConfirmation: "is required",
+        passwordConfirmation: " * is required",
       };
     } else {
       if (passwordConfirmation !== password) {
         newErrors = {
           ...newErrors,
-          passwordConfirmation: "does not match password",
+          passwordConfirmation: " * does not match password",
         };
       }
     }
@@ -107,27 +107,27 @@ const RegistrationForm = () => {
   }
 
   return (
-    <div className="grid-container">
-      <h1>Register</h1>
+    <div className="register-account-container">
       <ErrorList errors={serverErrors} />
-      <form onSubmit={onSubmit}>
+      <h1>Register</h1>
+      <form onSubmit={onSubmit} className="register-account-form" >
         <div>
           <label>
-            Username
+            Username <br/>
             <input type="text" name="username" value={userPayload.username} onChange={onInputChange} />
             <FormError error={errors.username} />
           </label>
         </div>
         <div>
           <label>
-            Email
+            Email <br/>
             <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
             <FormError error={errors.email} />
           </label>
         </div>
         <div>
           <label>
-            Password
+            Password <br/>
             <input
               type="password"
               name="password"
@@ -139,7 +139,7 @@ const RegistrationForm = () => {
         </div>
         <div>
           <label>
-            Password Confirmation
+            Password Confirmation <br/>
             <input
               type="password"
               name="passwordConfirmation"
