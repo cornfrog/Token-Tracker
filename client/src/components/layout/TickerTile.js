@@ -9,9 +9,9 @@ const TickerTile = (props) => {
         price: "---",
         status: ""
     })
-    let connection = new WebSocket('wss://ws-feed.exchange.coinbase.com')
-
+    
     useEffect(() => {
+        const connection = new WebSocket('wss://ws-feed.exchange.coinbase.com')
 
         connection.onopen = () => {
             const subscribeRequest = {
@@ -38,6 +38,8 @@ const TickerTile = (props) => {
             connection.close()
         }
     }, [channel])
+
+    console.log(currentPrice)
 
     return (
         <p className="price-ticker">{coinName} [{coinID}] - <span className={currentPrice.status}>{currentPrice.price}</span></p>
