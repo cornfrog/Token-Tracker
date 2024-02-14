@@ -1,27 +1,22 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import TickerTile from "./TickerTile"
+import defaultCoinList from "../../constants/defaultCoinList"
 
 const TickerList = (props) => {
-    const defaultCoins = [
-        {
-            id: "BTC",
-            name: "Bitcoin",
-            channel: "BTC-USD"
-        },
-        {
-            id: "ETH",
-            name: "Ethereum",
-            channel: "ETH-USD"
-        },
-        {
-            id: "SOL",
-            name: "Solana",
-            channel: "SOL-USD"
-        }
-    ]
+    const [coinList, setCoinList] = useState([])
 
-    const tickerList = defaultCoins.map((coin) => {
-        return <TickerTile channel={coin.channel} coinName={coin.name} key={coin.id} coinID={coin.id}/>
+    const getCoinList = async () => {
+        setCoinList(defaultCoinList)
+    }
+
+    console.log(coinList)
+
+    useEffect(() => {
+        getCoinList()
+    }, [])
+
+    const tickerList = coinList.map((coin) => {
+        return <TickerTile channel={coin.channel} coinName={coin.name} key={coin.code} coinCode={coin.code}/>
     })
 
     return (
