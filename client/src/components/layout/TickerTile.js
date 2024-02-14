@@ -4,7 +4,7 @@ import formatCurrentPrice from "../../services/formatCurrentPrice"
 const TickerTile = (props) => {
     const channel = props.channel
     const coinName = props.coinName
-    const coinID = props.coinID
+    const coinCode = props.coinCode
     const [currentPrice, setCurrentPrice] = useState({
         price: "---",
         status: ""
@@ -41,7 +41,7 @@ const TickerTile = (props) => {
     }, [channel])
 
     return (
-        <p className="price-ticker">{coinName} [{coinID}] - <span className={currentPrice.status}>{currentPrice.price}</span></p>
+        <p className="price-ticker">{coinName} [{coinCode}] - <span className={currentPrice.status}>{currentPrice.price}</span></p>
     )
 }
 

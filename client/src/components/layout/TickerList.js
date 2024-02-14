@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import TickerTile from "./TickerTile"
 
 const TickerList = (props) => {
@@ -14,14 +14,28 @@ const TickerList = (props) => {
             channel: "ETH-USD"
         },
         {
-            id: "SOL",
-            name: "Solana",
-            channel: "SOL-USD"
+            id: "XRP",
+            name: "Ripple",
+            channel: "XRP-USD"
         }
     ]
 
-    const tickerList = defaultCoins.map((coin) => {
-        return <TickerTile channel={coin.channel} coinName={coin.name} key={coin.id} coinID={coin.id}/>
+    const [coinList, setCoinList] = useState([])
+
+    const getCoinList = async () => {
+        const getDefaultCoinsList = await fetch("/api/v1/coins/default-coins")
+        const parsedCoinListResponse = await getDefaultCoinsList.json()
+        setCoinList(parsedCoinListResponse.coinList)
+    }
+
+    console.log(coinList)
+
+    useEffect(() => {
+        getCoinList()
+    }, [])
+
+    const tickerList = coinList.map((coin) => {
+        return <TickerTile channel={coin.channel} coinName={coin.name} key={coin.code} coinCode={coin.code}/>
     })
 
     return (
