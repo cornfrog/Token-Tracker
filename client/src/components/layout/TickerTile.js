@@ -39,8 +39,6 @@ const TickerTile = (props) => {
         }
     }, [channel])
 
-    console.log(currentPrice)
-
     return (
         <p className="price-ticker">{coinName} [{coinCode}] - <span className={currentPrice.status}>{currentPrice.price}</span></p>
     )

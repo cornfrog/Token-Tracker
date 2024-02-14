@@ -36,7 +36,7 @@ const App = (props) => {
       <MenuBar />
       <Switch>
         <Route exact path="/">
-          <TickerList />
+          <TickerList user={currentUser}/>
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
