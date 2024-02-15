@@ -7,7 +7,7 @@ class CoinSeeder {
         const coinbaseCoinAPI = "https://api.coinbase.com/v2/currencies/crypto"
         try {
             const gotRequestToCoinbase = await got(coinbaseCoinAPI)
-            const parsedResponseFromCoinbase = parseJson(gotRequestToCoinbase.body)
+            const parsedResponseFromCoinbase = JSON.parse(gotRequestToCoinbase.body)
             //const parsedResponseFromCoinbase = JSON.parse(gotRequestToCoinbase.body)
             const arrayOfCoins = parseCoins(parsedResponseFromCoinbase.data)
             for(const coin of arrayOfCoins) {

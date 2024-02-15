@@ -1,7 +1,7 @@
 const parseCoins = (arrayOfCoins) => {
     const serializedArrayOfCoins = []
     for (const coin of arrayOfCoins) {
-        serializedArrayOfCoins.push(serializeCoin(coin))
+        serializedArrayOfCoins.push(parseCoin(coin))
     }
     return serializedArrayOfCoins
 }
@@ -12,6 +12,7 @@ const parseCoin = (coin) => {
     for(const attribute of allowedAttributes){
         serializedCoin[attribute] = coin[attribute] 
     }
+    serializedCoin.channel = `${serializedCoin.code}-USD`
     return serializedCoin
 }
 
