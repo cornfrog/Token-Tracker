@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 import { connection } from "../boot.js";
-// import UserSeeder from "./seeders/UserSeeder.js";
+import UserSeeder from "./seeders/UserSeeder.js";
 import CoinSeeder from "./seeders/CoinSeeder.js";
+import UserCoinSeeder from "./seeders/UserCoinSeeder.js";
 
 class Seeder {
   static async seed() {
@@ -10,8 +11,9 @@ class Seeder {
     //    > users
     //    > coins
     // ====================================
-    // await UserSeeder.seed()
-    // await CoinSeeder.seed()
+    await CoinSeeder.seed()
+    await UserSeeder.seed()
+    await UserCoinSeeder.seed()
     console.log("Done!");
     await connection.destroy();
   }
