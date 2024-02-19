@@ -7,6 +7,7 @@ const AllCoins = (props) => {
         followedCoins: []
     })
 
+
     const getCoins = async () => {
         try {
             const fetchedCoinLists = await fetch("/api/v1/coins/all-coins")
@@ -31,6 +32,7 @@ const AllCoins = (props) => {
         if (!event.currentTarget.checked) {
             // if the coin is currently being followed 
             console.log("Unfollow")
+            event.currentTarget.parentNode.className = "unfollowed"
             const coinID = event.currentTarget.value
             console.log(coinID)
             try {
@@ -46,6 +48,7 @@ const AllCoins = (props) => {
         } else {
             // if coin is NOT being followed
             console.log("follow")
+            event.currentTarget.parentNode.className = "followed-coin"
             const coinID = event.currentTarget.value
             console.log(coinID)
             try {
@@ -65,18 +68,18 @@ const AllCoins = (props) => {
 
     const unfollowedCoins = coinLists.unfollowedCoins.map((coin) => {
         return (
-            <label key={coin.sort_index}>
-                <input type="checkbox" value={coin.sort_index} onChange={updateCoins} />
-                {coin.name} - [{coin.code}]
+            <label key={coin.sort_index}className="unfollowed">
+                <input type="checkbox" className="coin-check" value={coin.sort_index} onChange={updateCoins} />
+                <span>{coin.name} - [{coin.code}]</span>
             </label>
         )
     })
 
     const followedCoins = coinLists.followedCoins.map((coin) => {
         return (
-            <label key={coin.sort_index}>
-                <input type="checkbox" value={coin.sort_index} defaultChecked onChange={updateCoins} />
-                {coin.name} - [{coin.code}]
+            <label key={coin.sort_index} className="followed-coin">
+                <input className="coin-check" type="checkbox" value={coin.sort_index} defaultChecked onChange={updateCoins} />
+                <span>{coin.name} - [{coin.code}]</span>
             </label>
         )
     })
@@ -86,7 +89,6 @@ const AllCoins = (props) => {
     return (
         <>
             <form className="all-coins">
-
                 {allCoins}
             </form>
         </>

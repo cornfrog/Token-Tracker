@@ -42,7 +42,7 @@ const FollowedCoins = (props) => {
         return (
             <label key={coin.sort_index} className="coin-label">
                 <input className="coin-check" type="checkbox" defaultChecked value={coin.sort_index} onClick={unfollowCoin}/>
-                {coin.name} - [{coin.code}]
+                <span className="coin-text">{coin.name} - [{coin.code}]</span>
             </label>
         )
     })

@@ -250,11 +250,19 @@
       }
     }
 
+    .edit-coins-button {
+      display: block;
+      margin: 2.5rem auto;
+      padding: .5rem 1rem;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+    }
+
     .edit-coin-list-buttons {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 2.5rem;
       font-size: 1.5rem;
 
       .coin-list-link {
@@ -274,6 +282,19 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+
+      .coin-check {
+        display: none;
+      }
+
+      .coin-label {
+        padding: .75rem 1rem;
+        border-radius: 1rem;
+        background-color: white;
+        color: black;
+      }
     }
 
     .all-coins {
@@ -283,6 +304,19 @@
       align-items: center;
       height: 50vh;
       overflow-y: auto;
+      gap: 1rem;
+      font-size: 1.5rem;
+
+      .coin-check {
+        display: none;
+      }
+
+      .followed-coin {
+        padding: .75rem 1rem;
+        border-radius: 1rem;
+        background-color: white;
+        color: black;
+      }
     }
   }
 }
