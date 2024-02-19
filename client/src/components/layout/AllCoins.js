@@ -27,21 +27,17 @@ const AllCoins = (props) => {
     }, [])
 
     const updateCoins = async (event) => {
-        console.log(event.currentTarget)
         //this is backwards - and i dont know why...
         if (!event.currentTarget.checked) {
             // if the coin is currently being followed 
-            console.log("Unfollow")
             event.currentTarget.parentNode.className = "unfollowed"
             const coinID = event.currentTarget.value
-            console.log(coinID)
             try {
                 const unfollowedCoin = await fetch(`/api/v1/user-coins/${coinID}`, {
                     method: "delete",
                     headers: new Headers({ "Content-Type": "application/json" }),
                 })
                 const parsedUnfollowResponse = await unfollowedCoin.json()
-                console.log(parsedUnfollowResponse)
             } catch (error) {
                 console.error(error)
             }
@@ -50,7 +46,6 @@ const AllCoins = (props) => {
             console.log("follow")
             event.currentTarget.parentNode.className = "followed-coin"
             const coinID = event.currentTarget.value
-            console.log(coinID)
             try {
                 const followCoin = await fetch("/api/v1/user-coins/", {
                     method: "PATCH",
@@ -58,8 +53,6 @@ const AllCoins = (props) => {
                     body: JSON.stringify({ coinToFollow: coinID })
                 })
                 const parsedFollowCoinResponse = await followCoin.json()
-                console.log(parsedFollowCoinResponse)
-
             } catch (error) {
                 console.error(error)
             }

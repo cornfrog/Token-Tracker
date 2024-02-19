@@ -12,6 +12,7 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import TickerList from "./layout/TickerList";
 import EditCoinList from "./layout/EditCoinList";
+import CoinShowPage from "./layout/CoinShowPage";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -42,6 +43,7 @@ const App = (props) => {
         <Route exact path="/news" component={NewsIndex} />
         <AuthenticatedRoute exact path="/login" component={SignInForm} user={currentUser} />
         <Route path="/my-coins/edit" component={EditCoinList} user={currentUser}/>
+        <Route exact path="/coins/:coinCode" component={CoinShowPage} />
       </Switch>
     </Router>
   );
