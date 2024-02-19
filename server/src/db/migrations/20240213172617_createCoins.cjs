@@ -11,6 +11,7 @@ exports.up = async (knex) => {
         table.string("name").notNullable()
         table.string("code").notNullable()
         table.string("sort_index").notNullable()
+        table.string("channel").notNullable()
         table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now());
         table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now());  
     })

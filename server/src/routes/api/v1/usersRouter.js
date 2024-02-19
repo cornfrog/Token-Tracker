@@ -14,9 +14,9 @@ usersRouter.post("/", async (req, res) => {
       return res.status(201).json({ user: persistedUser });
     });
   } catch (error) {
-    console.log("outside if: ", error.data)
+    // console.log("outside if: ", error.data)
     if (error instanceof ValidationError) {
-      console.log("inside if: ", error.data)
+      // console.log("inside if: ", error.data)
       return res.status(422).json({ errors: error.data });
     }
     return res.status(500).json({ error: error.message });
