@@ -36,7 +36,7 @@ const TickerList = ({ user }) => {
         return window.location.href = "/my-coins/edit"
     }
 
-    const editUserCoinListButton = <button onClick={goToEditPage}>Edit Coin List</button> 
+    const editUserCoinListButton = <button  className="edit-coins-button" onClick={goToEditPage}>Edit Coin List</button> 
 
     return (
         <>
