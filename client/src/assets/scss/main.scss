@@ -33,6 +33,7 @@
     }
 
     .menu-bar {
+      margin-top: 1rem;
       margin-bottom: 2rem;
       display: flex;
       justify-content: space-evenly;
@@ -247,6 +248,41 @@
           padding: .15rem .25rem;
         }
       }
+    }
+
+    .edit-coin-list-buttons {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+
+      .coin-list-link {
+        color: white;
+        text-decoration: none;
+      }
+
+      .coin-list-link:focus {
+        outline: none;
+        text-decoration-line: underline;
+        text-decoration-thickness: .25rem;
+      }
+    }
+
+    .user-coins {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .all-coins {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 50vh;
+      overflow-y: auto;
     }
   }
 }

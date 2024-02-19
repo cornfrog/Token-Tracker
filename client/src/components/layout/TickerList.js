@@ -17,9 +17,9 @@ const TickerList = ({ user }) => {
         // const signedInList = [...coinList, testSignInCoin]
         // setCoinList(signedInList)
         try {
-            const fetchUserFollowedCoins = await fetch("/api/v1/coins/user-coins")
+            const fetchUserFollowedCoins = await fetch("/api/v1/coins/user-ticker-list")
             const parsedFollowedCoins = await fetchUserFollowedCoins.json()
-            const userFollowedCoins = parsedFollowedCoins.followedCoins
+            const userFollowedCoins = parsedFollowedCoins.tickerList
             const userTickerList = parseCoins(userFollowedCoins)
             setCoinList(userTickerList)
         } catch (error) {
@@ -31,12 +31,20 @@ const TickerList = ({ user }) => {
         return <TickerTile channel={coin.channel} coinName={coin.name} key={coin.code} coinCode={coin.code} />
     })
 
+
+    const goToEditPage = () => {
+        return window.location.href = "/my-coins/edit"
+    }
+
+    const editUserCoinListButton = <button onClick={goToEditPage}>Edit Coin List</button> 
+
     return (
         <>
             <h1 className="tracked-coins-header">Tracked Coins</h1>
             <div className="ticker-list">
                 {tickerList}
             </div>
+            {user ? editUserCoinListButton : null}
         </>
     )
 }

@@ -6,14 +6,12 @@ import "../assets/scss/main.scss";
 import MenuBar from "./layout/MenuBar";
 import CoinIndex from "./layout/CoinIndex";
 import NewsIndex from "./layout/NewsIndex";
-
 import getCurrentUser from "../services/getCurrentUser";
-
 import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
-
 import TickerList from "./layout/TickerList";
+import EditCoinList from "./layout/EditCoinList";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -42,7 +40,8 @@ const App = (props) => {
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/coins" component={CoinIndex} />
         <Route exact path="/news" component={NewsIndex} />
-        <AuthenticatedRoute exact path="/login" component={SignInForm} />
+        <AuthenticatedRoute exact path="/login" component={SignInForm} user={currentUser} />
+        <Route path="/my-coins/edit" component={EditCoinList} user={currentUser}/>
       </Switch>
     </Router>
   );
