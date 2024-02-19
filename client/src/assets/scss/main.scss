@@ -223,6 +223,14 @@
       border-radius: 1rem;
       text-align: center;
       width: fit-content;
+       a {
+        color: white;
+        text-decoration: none;
+       }
+
+       a:hover {
+        text-decoration: underline;
+       }
 
       .price-ticker {
         font-size: 1.25rem;
@@ -318,6 +326,37 @@
         color: black;
       }
     }
+  }
+
+  .coin-show-top{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    .following-btn {
+      padding: .5rem 1rem;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+      border: .25rem solid silver;
+      background-color: gold;
+      color: black;
+    }
+
+    .follow-btn {
+      padding: .5rem 1rem;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+      border: .25rem solid silver;
+      background-color: transparent;
+      color: white;
+    }
+  }
+
+  .coin-price-details {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    font-size: 1.5rem;
   }
 }
 

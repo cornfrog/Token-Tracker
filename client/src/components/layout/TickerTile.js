@@ -39,8 +39,11 @@ const TickerTile = (props) => {
         }
     }, [channel])
 
+    const link = `/coins/${coinCode}`
+    const linkToShowPage = <a href={link}>[{coinCode}]</a>
+
     return (
-        <p className="price-ticker">{coinName} [{coinCode}] - <span className={currentPrice.status}>{currentPrice.price}</span></p>
+        <p className="price-ticker">{coinName} {linkToShowPage} - <span className={currentPrice.status}>{currentPrice.price}</span></p>
     )
 }
 

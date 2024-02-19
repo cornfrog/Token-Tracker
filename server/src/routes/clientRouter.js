@@ -12,7 +12,8 @@ const clientRoutes = [
   "/news",
   "/my-coins/edit",
   "/my-coins/edit/following",
-  "/my-coins/edit/all"
+  "/my-coins/edit/all",
+  "/coins/:coinCode"
 ];
 const authedClientRoutes = ["/profile", "/login"];
 
