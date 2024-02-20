@@ -5,7 +5,7 @@ const FollowedCoins = (props) => {
 
     const getFollowedCoins = async () => {
         try {
-            const fetchedFollowedCoins = await fetch("/api/v1/coins/user-coins")
+            const fetchedFollowedCoins = await fetch("/api/v1/coins/user-coins/")
             const parsedFollowedCoins = await fetchedFollowedCoins.json()
             console.log("Followed Coins: ", parsedFollowedCoins.followList)
             setFollowedCoinList(parsedFollowedCoins.followList)

@@ -13,9 +13,16 @@ const clientRoutes = [
   "/my-coins/edit",
   "/my-coins/edit/following",
   "/my-coins/edit/all",
-  "/coins/:coinCode"
+  "/coins/:coinCode",
+  "/profile/my-coins/",
+  "/profile/saved-articles/"
 ];
-const authedClientRoutes = ["/profile", "/login"];
+const authedClientRoutes = [
+  "/profile", 
+  "/login", 
+  "/profile/my-coins/",
+  "/profile/saved-articles/"
+];
 
 router.get(clientRoutes, (req, res) => {
   res.sendFile(getClientIndexPath());
