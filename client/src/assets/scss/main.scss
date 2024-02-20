@@ -32,6 +32,53 @@
       }
     }
 
+    .profile-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: fixed;
+      top: 12vh;
+      right: 0;
+      height: 100vh;
+      width: 0vw;
+      overflow: hidden;
+      text-align: center;
+      background-color: rgb(75, 75, 75);
+      transition: width .5s ease-in-out;
+
+      .menu-btn {
+        display: none;
+      }
+    }
+
+    .profile-menu-show {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: fixed;
+      top: 12vh;
+      right: 0;
+      height: 100vh;
+      width: 60vw;
+      text-align: center;
+      border: 1px solid white;
+      border-radius: .25rem;
+      background-color: rgb(75, 75, 75);
+      transition: width .5s ease-in-out;
+
+      .menu-btn:first-child {
+        margin-top: 2rem;
+      }
+
+      .menu-btn {
+        background-color: white;
+        border: .5rem solid black;
+        border-radius: 2rem;
+        padding: .75rem;
+        font-size: 1.75rem;
+      }
+    }
+
     .menu-bar {
       margin-top: 1rem;
       margin-bottom: 2rem;

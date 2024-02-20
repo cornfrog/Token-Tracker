@@ -7,7 +7,6 @@ const AllCoins = (props) => {
         followedCoins: []
     })
 
-
     const getCoins = async () => {
         try {
             const fetchedCoinLists = await fetch("/api/v1/coins/all-coins")
@@ -61,7 +60,7 @@ const AllCoins = (props) => {
 
     const unfollowedCoins = coinLists.unfollowedCoins.map((coin) => {
         return (
-            <label key={coin.sort_index}className="unfollowed">
+            <label key={coin.sort_index} className="unfollowed">
                 <input type="checkbox" className="coin-check" value={coin.sort_index} onChange={updateCoins} />
                 <span>{coin.name} - [{coin.code}]</span>
             </label>
