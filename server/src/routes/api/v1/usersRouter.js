@@ -1,5 +1,7 @@
 import express from "express";
 import { ValidationError } from "objection";
+import serializeUser from "../../../../services/serializeUser.js"
+import serializeCoinList from "../../../../services/serializeCoinList.js";
 
 import { User } from "../../../models/index.js";
 
@@ -22,5 +24,21 @@ usersRouter.post("/", async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 });
+
+usersRouter.get("/:id", async (req, res) => {
+  const userID = req.params.id
+  console.log(userID)
+  try {
+    const queriedUser = await User.query().findById(userID)
+    const userFollowedCoins = await queriedUser.$relatedQuery("coins")
+    const userData = serializeUser(queriedUser)
+    const followedCoins = serializeCoinList(userFollowedCoins)
+    return res.status(200).json({userData: userData, followedCoins: followedCoins})
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json({errors: error})
+
+  }
+})
 
 export default usersRouter;

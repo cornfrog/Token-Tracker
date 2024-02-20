@@ -13,6 +13,7 @@ import TopBar from "./layout/TopBar";
 import TickerList from "./layout/TickerList";
 import EditCoinList from "./layout/EditCoinList";
 import CoinShowPage from "./layout/CoinShowPage";
+import Profile from "./layout/Profile";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -42,6 +43,7 @@ const App = (props) => {
         <Route exact path="/coins" component={CoinIndex} />
         <Route exact path="/news" component={NewsIndex} />
         <AuthenticatedRoute exact path="/login" component={SignInForm} user={currentUser} />
+        <AuthenticatedRoute path="/profile" component={Profile} user={currentUser} />
         <Route path="/my-coins/edit" component={EditCoinList} user={currentUser}/>
         <Route exact path="/coins/:coinCode" component={CoinShowPage} />
       </Switch>

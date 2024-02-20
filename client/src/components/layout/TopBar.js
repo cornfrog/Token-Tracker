@@ -17,14 +17,8 @@ const TopBar = ({ user }) => {
 
   const signedOutImage = <img src={signedOutImagePath} onClick={goToLogin} className="profile-pic" />
 
-  const authenticatedListItems = [
-    <li key="sign-out">
-      <SignOutButton />
-    </li>,
-  ];
-
   const goToProfile = () => {
-    alert("Profile")
+    return window.location.href = "/profile"
   }
 
   const showMenu = () => {
