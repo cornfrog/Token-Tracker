@@ -9,6 +9,8 @@ const TickerTile = (props) => {
         price: "---",
         status: ""
     })
+    // matthew being weird
+    // const [loading, setIsLoading] = useState(false);
     
     useEffect(() => {
         const connection = new WebSocket('wss://ws-feed.exchange.coinbase.com')
