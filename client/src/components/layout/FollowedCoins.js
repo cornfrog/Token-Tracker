@@ -7,7 +7,6 @@ const FollowedCoins = (props) => {
         try {
             const fetchedFollowedCoins = await fetch("/api/v1/coins/user-coins/")
             const parsedFollowedCoins = await fetchedFollowedCoins.json()
-            console.log("Followed Coins: ", parsedFollowedCoins.followList)
             setFollowedCoinList(parsedFollowedCoins.followList)
         } catch (error) {
             console.error("Error in fetch:", error)
@@ -21,7 +20,6 @@ const FollowedCoins = (props) => {
 
 
     const unfollowCoin = async (event) => {
-        console.log(event.currentTarget.value)
         const coinSI = event.currentTarget.value
         try {  
             const unfollowedCoin = await fetch(`/api/v1/user-coins/${coinSI}`, {
@@ -29,7 +27,6 @@ const FollowedCoins = (props) => {
                 headers: new Headers({ "Content-Type": "application/json" }),
             })
             const parsedUnfollowResponse = await unfollowedCoin.json()
-            console.log(parsedUnfollowResponse)
             if(parsedUnfollowResponse.wasUnfollowed){
                 setFollowedCoinList(parsedUnfollowResponse.newFollowList)
             }
