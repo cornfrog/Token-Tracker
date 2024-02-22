@@ -13,9 +13,6 @@ const TickerList = ({ user }) => {
     }, [user])
 
     const getCoinList = async () => {
-        // const testSignInCoin = { name: "DogeCoin", code: "DOGE", channel: "DOGE-USD" }
-        // const signedInList = [...coinList, testSignInCoin]
-        // setCoinList(signedInList)
         try {
             const fetchUserFollowedCoins = await fetch("/api/v1/coins/user-ticker-list")
             const parsedFollowedCoins = await fetchUserFollowedCoins.json()
