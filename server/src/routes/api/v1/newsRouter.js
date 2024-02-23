@@ -26,7 +26,25 @@ newsRouter.get("/", async (req, res) => {
         articleData.articles = serializeArticles(articleData.articles)
         return res.status(200).json({ articleData })
     } catch (error) {
+        console.log(error)
         return res.status(500).json({ errors: error })
+    }
+})
+
+newsRouter.get("/trending/:pageCount", async (req, res) => {
+    const pageCount = req.params.pageCount
+    try {
+        const NEWS_API_URL = `https://newsapi.org/v2/everything?q=(crypto OR blockchain)&apiKey=${NEWS_API_KEY}&pageSize=5&page=${pageCount}&sortBy=popularity&language=en`
+        const fetchedArticles = await got(NEWS_API_URL)
+        const parsedArticles = JSON.parse(fetchedArticles.body)
+        const articleData = {
+            total: parsedArticles.totalResults,
+            articles: parsedArticles.articles
+        }
+        articleData.articles = serializeArticles(articleData.articles)        
+        return res.status(200).json({articles: articleData})
+    } catch (error) {
+        return res.status(200).json({errors: error})
     }
 })
 
@@ -36,7 +54,7 @@ newsRouter.get("/:code/:pageCount", async (req,res) => {
     try {
         const coin = await Coin.query().findOne({code: coinCode})
         const coinName = coin.name
-        const NEWS_API_URL = `https://newsapi.org/v2/everything?q=${coinName}&apiKey=${NEWS_API_KEY}&pageSize=5&page=${pageCount}&sortBy=relevancy&language=en`
+        const NEWS_API_URL = `https://newsapi.org/v2/everything?q=${coinName}&apiKey=${NEWS_API_KEY}&pageSize=5&page=${pageCount}&sortBy=popularity&language=en`
         const fetchedArticles = await got(NEWS_API_URL)
         const parsedArticles = JSON.parse(fetchedArticles.body)
         const articleData = {
@@ -46,8 +64,10 @@ newsRouter.get("/:code/:pageCount", async (req,res) => {
         articleData.articles = serializeArticles(articleData.articles)
         return res.status(200).json({ articleData })
     } catch (error) {
+        console.log(error)
         return res.status(500).json({errors: error})
     }
 })
+
 
 export default newsRouter

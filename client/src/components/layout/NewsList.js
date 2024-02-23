@@ -26,7 +26,7 @@ const NewsList = (props) => {
 
     return (
         <div className="news-list">
-            <h1>Related Articles</h1>
+            <h1 className="article-header">Related Articles</h1>
             <div>
                 {articleTiles}
             </div>

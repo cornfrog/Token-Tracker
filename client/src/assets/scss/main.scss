@@ -308,34 +308,62 @@
 
     .news-list {
       text-align: center;
-      .article-tile {
-        margin: 1rem 0;
-        border: .25rem solid white;
+    }
+
+    .article-header {
+      text-decoration: underline;
+    }
+
+    .article-tile {
+      margin: 1rem 0;
+      border-bottom: .25rem solid white;
+      width: 98vw;
+
+      .article-top {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: white;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        color: black;
+        font-size: 1.25rem;
+      }
+
+      .article-content {
+        margin: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.10rem;
+      }
+
+      .article-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 125px;
+        width: 175px;
         border-radius: 1rem;
-        
-        .article-title {
-          color: white;
+      }
 
-        }
-        .article-top {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-        }
+      .article-desc {
+        margin: 0 1rem;
+      }
 
-        button {
-          background-color: transparent;
-          border: none;
-          font-size: 2.25rem;
-        }
 
-        .favorited{
-          color: yellow;
-        }
+      button {
+        background-color: transparent;
+        border: none;
+        font-size: 2.25rem;
+      }
 
-        .unfavorited {
-          color: white;
-        }
+      .favorited {
+        color: yellow;
+      }
+
+      .unfavorited {
+        color: white;
       }
     }
 
@@ -452,11 +480,12 @@
       justify-content: space-evenly;
       align-items: center;
 
-      button:disabled{
+      button:disabled {
         background-color: black;
         color: white;
         border: .25rem solid white;
       }
+
       .article-btn {
         padding: .5rem 1.25rem;
         border-radius: 2rem;
@@ -493,11 +522,12 @@
     }
   }
 
-  .coin-index { 
+  .coin-index {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1.5rem 0;
+
     .link-to-coin {
       color: white;
       font-size: 1.5rem;
@@ -509,11 +539,13 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    button:disabled{
+
+    button:disabled {
       background-color: black;
       color: white;
       border: .25rem solid white;
     }
+
     .active-btn {
       padding: .5rem 1.25rem;
       border-radius: 2rem;
@@ -521,6 +553,41 @@
       border: none;
       background-color: white;
       color: black;
+    }
+  }
+
+  .news-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .news-header {
+      text-decoration: underline;
+      margin-bottom: 2rem;
+    }
+
+    .news-controls {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100vw;
+      margin-bottom: 1rem;
+
+      button {
+        padding: .5rem 1.25rem;
+        border-radius: 2rem;
+        font-size: 1.5rem;
+        border: none;
+        background-color: white;
+        color: black;
+      }
+
+      button:disabled {
+        background-color: black;
+        color: white;
+        border: .25rem solid white;
+      }
     }
   }
 

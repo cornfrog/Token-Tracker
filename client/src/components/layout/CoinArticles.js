@@ -14,7 +14,7 @@ const CoinArticles = (props) => {
         try {
             const fetchedCoinArticles = await fetch(`/api/v1/news/${coinCode}/${coinArticlePage}`)
             const parsedCoinArticles = await fetchedCoinArticles.json()
-            console.log("Coin Articles: ", parsedCoinArticles)
+            // console.log("Coin Articles: ", parsedCoinArticles)
             if(numberOfPages === 0){
                 const numberOfArticlePages = Math.ceil(parsedCoinArticles.articleData.total / parsedCoinArticles.articleData.articles.length)
                 setNumberOfPages(numberOfArticlePages)
@@ -51,9 +51,6 @@ const CoinArticles = (props) => {
     if(coinArticlePage === numberOfPages) {
         nextBtnDisabled = true
     }
-
-    console.log("current page: ", coinArticlePage)
-    console.log("number of pages: ", numberOfPages)
 
     return (
         <div className="coin-articles-container">
