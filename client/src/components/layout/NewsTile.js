@@ -7,20 +7,26 @@ const NewsTile = ({ article }) => {
     const desc = article.description
     const source = article.source
     const url = article.url
+    const img = article.urlToImage
 
-    const favoriteArticle = () => {
-        //TODO: Add article backend here
-        setFavoritedState(!favoritedArticle)
+    // const favoriteArticle = () => {
+    //     //TODO: Add article backend here
+    //     setFavoritedState(!favoritedArticle)
+    // }
+
+    const goToArticle = () => {
+        return window.open(url, '_blank').focus();
     }
 
     return (
         <div className="article-tile">
             <div className="article-top">
-                <a href={url} className="article-title" target="_blank">{title}</a>
-                <button onClick={favoriteArticle} className={favoritedArticle ? "favorited" : "unfavorited"}>★</button>
+                <p>Source: {source.name}</p>
             </div>
-            <p>{desc}</p>
-            <p>Source: {source.name}</p>
+            <div className="article-content" onClick={goToArticle}>
+                <img src={img} alt="" className="article-img" />
+                <p className="article-desc">{desc}</p>
+            </div>
         </div>
     )
 }

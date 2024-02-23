@@ -43,11 +43,9 @@ const Profile = ({ user }) => {
             </div>
             <div className="profile-links">
                 <Link className="profile-data-link" to="/profile/my-coins">My Coins </Link>
-                <Link className="profile-data-link" to="/profile/saved-articles">Saved Articles</Link>
             </div>
             <Switch>
                 <Route exact path="/profile/my-coins" component={FollowedCoins} />
-                <Route path="/profile/saved-articles" component={FavoritedArticles} />
             </Switch>
         </>
     )

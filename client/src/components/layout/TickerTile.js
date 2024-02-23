@@ -45,7 +45,7 @@ const TickerTile = (props) => {
     const linkToShowPage = <a href={link}>[{coinCode}]</a>
 
     return (
-        <p className="price-ticker">{coinName} {linkToShowPage} - <span className={currentPrice.status}>{currentPrice.price}</span></p>
+        <p className="price-ticker">{coinName} {linkToShowPage} - <span>{currentPrice.price}</span></p>
     )
 }
 
