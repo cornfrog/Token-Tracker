@@ -6,7 +6,7 @@ import CoinShowData from "./CoinShowData"
 const CoinShowPage = (props) => {
     const coinCode = props.match.params.coinCode
     const channel = `${coinCode}-USD`
-
+    
     return (
         <>
             <CoinShowTop coinCode={coinCode} />

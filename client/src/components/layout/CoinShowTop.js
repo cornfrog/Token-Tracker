@@ -26,7 +26,7 @@ const CoinShowTop = (props) => {
                     method: "delete",
                     headers: new Headers({ "Content-Type": "application/json" }),
                 })
-                setCoinFollowState({...coinFollowState, inUserFollowList: false})
+                setCoinFollowState({ ...coinFollowState, inUserFollowList: false })
             } catch (error) {
                 console.error(error)
             }
@@ -37,7 +37,7 @@ const CoinShowTop = (props) => {
                     headers: new Headers({ "Content-Type": "application/json" }),
                     body: JSON.stringify({ coinToFollow: coinCode })
                 })
-                setCoinFollowState({...coinFollowState, inUserFollowList: true})
+                setCoinFollowState({ ...coinFollowState, inUserFollowList: true })
             } catch (error) {
                 console.error(error)
             }
@@ -47,10 +47,11 @@ const CoinShowTop = (props) => {
     return (
         <div className="coin-show-top">
             <h1 className="coin-show-name">{coinFollowState.coinName}</h1>
-            <button 
-                className={coinFollowState.inUserFollowList ? "following-btn" : "follow-btn"} 
+            <button
+                className={coinFollowState.inUserFollowList ? "following-btn" : "follow-btn"}
                 onClick={updateCoinStatus}
-            >
+                hidden={!coinFollowState.signedIn}
+                >
                 {coinFollowState.inUserFollowList ? "Following" : "Follow"}
             </button>
         </div>

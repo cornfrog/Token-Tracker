@@ -21,16 +21,16 @@ const FollowedCoins = (props) => {
 
     const unfollowCoin = async (event) => {
         const coinSI = event.currentTarget.value
-        try {  
+        try {
             const unfollowedCoin = await fetch(`/api/v1/user-coins/${coinSI}`, {
                 method: "delete",
                 headers: new Headers({ "Content-Type": "application/json" }),
             })
             const parsedUnfollowResponse = await unfollowedCoin.json()
-            if(parsedUnfollowResponse.wasUnfollowed){
+            if (parsedUnfollowResponse.wasUnfollowed) {
                 setFollowedCoinList(parsedUnfollowResponse.newFollowList)
             }
-        } catch (error){
+        } catch (error) {
             console.error("Error in fetch: ", error)
         }
     }
@@ -38,16 +38,19 @@ const FollowedCoins = (props) => {
     const followedCoins = currentFollowedCoinList.map((coin) => {
         return (
             <label key={coin.sort_index} className="coin-label">
-                <input className="coin-check" type="checkbox" defaultChecked value={coin.sort_index} onClick={unfollowCoin}/>
+                <input className="coin-check" type="checkbox" defaultChecked value={coin.sort_index} onClick={unfollowCoin} />
                 <span className="coin-text">{coin.name} - [{coin.code}]</span>
             </label>
         )
     })
 
     return (
-        <form className="user-coins">
-            {followedCoins}
-        </form>
+        <>
+            <p className="list-hint">Click to Unfollow Coins:</p>
+            <form className="user-coins">
+                {followedCoins}
+            </form>
+        </>
     )
 }
 
