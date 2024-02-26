@@ -80,6 +80,7 @@ const AllCoins = (props) => {
 
     return (
         <>
+            <p className="list-hint">Click to Follow Coins:</p>
             <form className="all-coins">
                 {allCoins}
             </form>

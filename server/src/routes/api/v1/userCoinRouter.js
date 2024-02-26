@@ -32,20 +32,30 @@ userCoinRouter.patch("/", async (req, res) => {
 
 
 userCoinRouter.get("/following/:coinCode", async (req, res) => {
-    const userID = req.user.id
     const coinCode = req.params.coinCode
-    try {
-        const queriedUser = await User.query().findById(userID)
-        const queriedCoin = await Coin.query().findOne({ code: coinCode })
-        const queryUserFollowList = await queriedUser.$relatedQuery("coins").where({ code: coinCode })
-        let inUserFollowList = false
-        if (queryUserFollowList.length >= 1) {
-            inUserFollowList = true
+    if(req.user) {
+        try {
+            const userID = req.user.id
+            const queriedUser = await User.query().findById(userID)
+            const queriedCoin = await Coin.query().findOne({ code: coinCode })
+            const queryUserFollowList = await queriedUser.$relatedQuery("coins").where({ code: coinCode })
+            let inUserFollowList = false
+            if (queryUserFollowList.length >= 1) {
+                inUserFollowList = true
+            }
+            const coinName = queriedCoin.name
+            return res.status(200).json({ coinName, inUserFollowList, signedIn: true })
+        } catch (error) {
+            return res.status(500).json({ errors: error })
         }
-        const coinName = queriedCoin.name
-        return res.status(200).json({ coinName, inUserFollowList })
-    } catch (error) {
-        return res.status(500).json({ errors: error })
+    } else {
+        try {
+            const queriedCoin = await Coin.query().findOne({ code: coinCode })
+            const coinName = queriedCoin.name
+            return res.status(200).json({ coinName, signedIn: false })
+        } catch (error) {
+            return res.status(500).json({ errors: error })
+        }
     }
 })
 
@@ -53,7 +63,6 @@ userCoinRouter.get("/following/:coinCode", async (req, res) => {
 userCoinRouter.delete("/unfollow/:code", async (req, res) => {
     const userID = req.user.id
     const coinCode = req.params.code
-    // console.log(coinCode)
     try {
         const queriedCoin = await Coin.query().findOne({ code: coinCode })
         const wasUnfollowed = await FollowedCoin.query().delete().where({ userID: userID, coinID: queriedCoin.id })

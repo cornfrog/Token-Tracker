@@ -9,6 +9,7 @@ const NewsList = (props) => {
         try {
             const newsArticleFetch = await fetch("/api/v1/news/")
             const parsedArticles = await newsArticleFetch.json()
+            console.log(parsedArticles)
             setArticleList(parsedArticles.articleData.articles)
         } catch (error) {
             console.error(error)

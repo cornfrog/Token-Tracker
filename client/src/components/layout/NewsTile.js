@@ -7,12 +7,7 @@ const NewsTile = ({ article }) => {
     const desc = article.description
     const source = article.source
     const url = article.url
-    const img = article.urlToImage
-
-    // const favoriteArticle = () => {
-    //     //TODO: Add article backend here
-    //     setFavoritedState(!favoritedArticle)
-    // }
+    let img = article.urlToImage
 
     const goToArticle = () => {
         return window.open(url, '_blank').focus();
@@ -24,7 +19,7 @@ const NewsTile = ({ article }) => {
                 <p>Source: {source.name}</p>
             </div>
             <div className="article-content" onClick={goToArticle}>
-                <img src={img} alt="" className="article-img" />
+                <img src={img !== null ? img : "https://i.imgur.com/ZcbrVe3.jpeg"} alt="" className="article-img" />
                 <p className="article-desc">{desc}</p>
             </div>
         </div>

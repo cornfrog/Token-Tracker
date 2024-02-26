@@ -11,23 +11,39 @@ const newsRouter = new express.Router()
 const NEWS_API_KEY = process.env.NEWS_BACKUP
 
 newsRouter.get("/", async (req, res) => {
-    const userID = req.user.id
-    try {
-        const user = await User.query().findById(userID)
-        const userFollowedCoins = await user.$relatedQuery("coins")
-        const articleQuery = formatArticleQuery(userFollowedCoins)
-        const NEWS_API_URL = `https://newsapi.org/v2/everything?q=${articleQuery}&apiKey=${NEWS_API_KEY}&pageSize=5&sortBy=relevancy&language=en`
-        const fetchedArticles = await got(NEWS_API_URL)
-        const parsedArticles = JSON.parse(fetchedArticles.body)
-        const articleData = {
-            total: parsedArticles.totalResults,
-            articles: parsedArticles.articles
+    if(req.user){
+        try {
+            const userID = req.user.id
+            const user = await User.query().findById(userID)
+            const userFollowedCoins = await user.$relatedQuery("coins")
+            const articleQuery = formatArticleQuery(userFollowedCoins)
+            const NEWS_API_URL = `https://newsapi.org/v2/everything?q=${articleQuery}&apiKey=${NEWS_API_KEY}&pageSize=5&sortBy=relevancy&language=en`
+            const fetchedArticles = await got(NEWS_API_URL)
+            const parsedArticles = JSON.parse(fetchedArticles.body)
+            const articleData = {
+                total: parsedArticles.totalResults,
+                articles: parsedArticles.articles
+            }
+            articleData.articles = serializeArticles(articleData.articles)
+            return res.status(200).json({ articleData })
+        } catch (error) {
+            console.log(error)
+            return res.status(500).json({ errors: error })
         }
-        articleData.articles = serializeArticles(articleData.articles)
-        return res.status(200).json({ articleData })
-    } catch (error) {
-        console.log(error)
-        return res.status(500).json({ errors: error })
+    } else {
+        try {
+            const NEWS_API_URL = `https://newsapi.org/v2/everything?q=(crypto AND coinbase)&apiKey=${NEWS_API_KEY}&pageSize=5&sortBy=relevancy&language=en`
+            const fetchedArticles = await got(NEWS_API_URL)
+            const parsedArticles = JSON.parse(fetchedArticles.body)
+            const articleData = {
+                total: parsedArticles.totalResults,
+                articles: parsedArticles.articles
+            }
+            articleData.articles = serializeArticles(articleData.articles)
+            return res.status(200).json({ articleData })
+        } catch (error) {
+            return res.status(500).json({errors: error})
+        }
     }
 })
 
