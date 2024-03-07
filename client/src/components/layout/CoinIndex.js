@@ -52,6 +52,7 @@ const CoinIndex = (props) => {
 
     return (
         <>
+            <h1 className="coin-header">Crytpocurrencies</h1>
             <div className="coin-index">
                 {coinList}
             </div>

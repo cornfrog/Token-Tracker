@@ -111,7 +111,8 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.75rem;
-    a { 
+
+    a {
       color: white;
     }
   }
@@ -135,37 +136,165 @@ body {
     text-decoration: underline;
   }
 
-  .article-tile{
+  .article-tile {
     margin: 1.5rem auto;
     width: 80vw;
     border: 1px solid white;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 
-    .article-title{
+    .article-title {
       border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;  
+      border-top-right-radius: 1rem;
       background-color: white;
       color: black;
       margin-top: 0;
       font-size: 1.25rem;
       text-align: center;
     }
-    .article-content{
+
+    .article-content {
       cursor: pointer;
       display: flex;
       justify-content: space-around;
       align-items: center;
+
       .article-img {
         height: 125px;
         width: 175px;
         margin-bottom: 1rem;
       }
+
       .article-desc {
         width: 50%;
         text-align: center;
         user-select: none;
       }
+    }
+  }
+
+  .coin-header {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2.5rem;
+  }
+
+  .coin-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+
+    .link-to-coin {
+      color: white;
+      font-size: 1.5rem;
+      margin: .75rem 0;
+    }
+  }
+
+  .coin-index-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    button:disabled {
+      background-color: black;
+      color: white;
+      border: .25rem solid white;
+    }
+
+    .active-btn {
+      padding: .5rem 1.25rem;
+      border-radius: 2rem;
+      font-size: 2.25rem;
+      border: none;
+      background-color: white;
+      color: black;
+    }
+  }
+
+  .news-header {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2.5rem;
+  }
+
+  .news-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 1rem;
+
+    button {
+      padding: .5rem 1.25rem;
+      border-radius: 2rem;
+      font-size: 1.5rem;
+      border: none;
+      background-color: white;
+      color: black;
+    }
+
+    button:disabled {
+      background-color: black;
+      color: white;
+      border: .25rem solid white;
+    }
+  }
+
+  .coin-show-top {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .following-btn {
+      padding: .5rem 1rem;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+      border: .25rem solid silver;
+      background-color: gold;
+      color: black;
+    }
+
+    .follow-btn {
+      padding: .5rem 1rem;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+      border: .25rem solid silver;
+      background-color: transparent;
+      color: white;
+    }
+  }
+  .coin-price-details {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .article-list-header {
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .coin-articles-buttons {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    align-items: center;
+
+    button:disabled {
+      background-color: black;
+      color: white;
+      border: .25rem solid white;
+    }
+
+    .article-btn {
+      padding: .5rem 1.25rem;
+      border-radius: 2rem;
+      font-size: 1.5rem;
+      border: none;
+      background-color: white;
+      color: black;
     }
   }
 }
@@ -178,10 +307,11 @@ body {
   .profile-pic {
     border: .25rem solid white;
   }
-  
+
   .profile-menu-show {
     top: 6rem;
     width: 65vw;
+
     .menu-btn:hover {
       cursor: pointer;
     }
@@ -200,6 +330,7 @@ body {
   .profile-menu-show {
     top: 6rem;
     width: 60vw;
+
     .menu-btn:hover {
       cursor: pointer;
     }
@@ -218,6 +349,7 @@ body {
   .profile-menu-show {
     top: 6rem;
     width: 50vw;
+
     .menu-btn:hover {
       cursor: pointer;
     }
@@ -238,6 +370,7 @@ body {
   .profile-menu-show {
     top: 8rem;
     width: 50vw;
+
     .menu-btn:hover {
       cursor: pointer;
     }
@@ -258,6 +391,7 @@ body {
   .profile-menu-show {
     top: 8rem;
     width: 25vw;
+
     .menu-btn:hover {
       cursor: pointer;
     }
