@@ -31,23 +31,49 @@ body {
   }
 
   .profile-menu {
-    display: none;
-    height: 0vw;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    top: 12vh;
+    right: 0;
+    height: 100vh;
+    width: 0vw;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgb(75, 75, 75);
+    transition: width .25s ease-in-out;
+    .menu-btn {
+      display: none;
+    }
   }
 
   .profile-menu-show {
-    position: absolute;
+    margin-right: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: gray;
-    width: 10vw;
+    gap: 2rem;
+    position: absolute;
+    top: 9rem;
     right: 0;
+    height: 100vh;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: .25rem;
+    background-color: rgb(75, 75, 75);
+    transition: width .25s ease-in-out;
 
-    button {
-      margin: 1rem 0;
-      font-size: 2.25rem;
+    .menu-btn:first-child {
+      margin-top: 2rem;
+    }
+
+    .menu-btn {
+      background-color: white;
+      border: .5rem solid black;
+      border-radius: 2rem;
+      padding: .75rem;
+      font-size: 1.75rem;
     }
   }
 
@@ -61,6 +87,13 @@ body {
   .profile-pic {
     border: .25rem solid white;
   }
+  
+  .profile-menu-show {
+    width: 65vw;
+    .menu-btn:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -71,6 +104,13 @@ body {
   .profile-pic {
     border: .25rem solid white;
   }
+
+  .profile-menu-show {
+    width: 60vw;
+    .menu-btn:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -80,6 +120,13 @@ body {
 
   .profile-pic {
     border: .35rem solid white;
+  }
+
+  .profile-menu-show {
+    width: 50vw;
+    .menu-btn:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -92,6 +139,13 @@ body {
     height: 5rem;
     width: 5rem;
     border: .5rem solid white;
+  }
+
+  .profile-menu-show {
+    width: 50vw;
+    .menu-btn:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -107,7 +161,9 @@ body {
   }
 
   .profile-menu-show {
-    margin-right: 14vw;
-    transition: height 5s ease-in-out;
+    width: 25vw;
+    .menu-btn:hover {
+      cursor: pointer;
+    }
   }
 }
