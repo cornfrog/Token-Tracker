@@ -78,11 +78,25 @@ body {
   }
 
   .menu-bar {
-    border: 1px solid white;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.75rem;
+    font-size: 2.25rem;
+
+    .menu-bar-link {
+      text-decoration: none;
+      border: .25rem solid white;
+      border-radius: 2rem;
+      padding: .5rem 1rem;
+      color: white;
+      transition: background-color .5s ease-in-out;
+    }
+
+    .menu-bar-link:hover {
+      color: black;
+      background-color: white;
+    }
+
   }
 
 }
