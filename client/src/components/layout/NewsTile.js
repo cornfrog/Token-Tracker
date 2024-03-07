@@ -16,7 +16,7 @@ const NewsTile = ({ article }) => {
     return (
         <div className="article-tile">
             <div className="article-top">
-                <p>Source: {source.name}</p>
+                <p className="article-title">Source: {source.name}</p>
             </div>
             <div className="article-content" onClick={goToArticle}>
                 <img src={img !== null ? img : "https://i.imgur.com/ZcbrVe3.jpeg"} alt="" className="article-img" />

@@ -34,7 +34,7 @@ const TopBar = ({ user }) => {
 
   return (
     <>
-      <div className="nav-bar-mobile">
+      <div className="app-top-bar">
         <header className="app-title" onClick={() => { goToHomePage() }}>Token Tracker</header>
         <ul>{user ? profilePicture : signedOutImage}</ul>
       </div>
