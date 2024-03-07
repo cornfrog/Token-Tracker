@@ -82,6 +82,7 @@ body {
     justify-content: space-around;
     align-items: center;
     font-size: 2.25rem;
+    margin: 1.5rem;
 
     .menu-bar-link {
       text-decoration: none;
@@ -96,9 +97,77 @@ body {
       color: black;
       background-color: white;
     }
-
   }
 
+  .tracked-coins-header {
+    text-align: center;
+    font-size: 2.75rem;
+    text-decoration: underline;
+  }
+
+  .ticker-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+    a { 
+      color: white;
+    }
+  }
+
+  .edit-coins-button {
+    display: block;
+    margin: 1.5rem auto;
+    padding: .5rem 1rem;
+    background-color: white;
+    color: black;
+    border: .5rem solid white;
+    border-radius: 1rem;
+    font-size: 1.75rem;
+    cursor: pointer;
+  }
+
+  .article-header {
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 2.75rem;
+    text-decoration: underline;
+  }
+
+  .article-tile{
+    margin: 1.5rem auto;
+    width: 80vw;
+    border: 1px solid white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    .article-title{
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;  
+      background-color: white;
+      color: black;
+      margin-top: 0;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+    .article-content{
+      cursor: pointer;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .article-img {
+        height: 125px;
+        width: 175px;
+        margin-bottom: 1rem;
+      }
+      .article-desc {
+        width: 50%;
+        text-align: center;
+        user-select: none;
+      }
+    }
+  }
 }
 
 @media (max-width: 576px) {
