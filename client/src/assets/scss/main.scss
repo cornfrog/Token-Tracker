@@ -44,6 +44,7 @@ body {
     text-align: center;
     background-color: rgb(75, 75, 75);
     transition: width .25s ease-in-out;
+
     .menu-btn {
       display: none;
     }
@@ -55,7 +56,6 @@ body {
     flex-direction: column;
     gap: 2rem;
     position: absolute;
-    top: 9rem;
     right: 0;
     height: 100vh;
     text-align: center;
@@ -77,6 +77,14 @@ body {
     }
   }
 
+  .menu-bar {
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.75rem;
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -89,6 +97,7 @@ body {
   }
   
   .profile-menu-show {
+    top: 6rem;
     width: 65vw;
     .menu-btn:hover {
       cursor: pointer;
@@ -106,6 +115,7 @@ body {
   }
 
   .profile-menu-show {
+    top: 6rem;
     width: 60vw;
     .menu-btn:hover {
       cursor: pointer;
@@ -123,6 +133,7 @@ body {
   }
 
   .profile-menu-show {
+    top: 6rem;
     width: 50vw;
     .menu-btn:hover {
       cursor: pointer;
@@ -142,6 +153,7 @@ body {
   }
 
   .profile-menu-show {
+    top: 8rem;
     width: 50vw;
     .menu-btn:hover {
       cursor: pointer;
@@ -161,6 +173,7 @@ body {
   }
 
   .profile-menu-show {
+    top: 8rem;
     width: 25vw;
     .menu-btn:hover {
       cursor: pointer;
