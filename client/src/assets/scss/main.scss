@@ -386,6 +386,161 @@ body {
       text-decoration: none;
     }
   }
+  .login {
+    margin: 0 auto;
+    border: .25rem solid white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      label {
+        font-size: 1.5rem;
+
+        .sign-in-error {
+          color: blue;
+        }
+      }
+
+      input {
+        font-size: 1.15rem;
+      }
+
+      .error {
+        color: rgb(255, 0, 0);
+      }
+
+      .sign-in {
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .button {
+          background-color: transparent;
+          color: white;
+          font-size: 1.25rem;
+          padding: .75rem 1.25rem;
+          border: .4rem solid rgba(0, 200, 0, 0.487);
+          border-radius: 1rem;
+          transition: border-color .25s ease-in-out;
+        }
+
+        .button:hover {
+          cursor: pointer;
+          border: .4rem solid rgb(0, 200, 0);
+          color: rgb(0, 200, 0);
+        }
+
+        .button:active {
+          transform: translateY(.25rem);
+        }
+      }
+    }
+
+    .register-account {
+      text-align: center;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+
+      .button {
+        text-decoration: none;
+        background-color: transparent;
+        color: white;
+        font-size: 1rem;
+        padding: .5rem .75rem;
+        border: .4rem solid rgba(0, 200, 0, 0.487);
+        border-radius: 1rem;
+        transition: border-color .25s ease-in-out;
+      }
+
+      .button:hover {
+        cursor: pointer;
+        border: .4rem solid rgb(0, 200, 0);
+        color: rgb(0, 200, 0);
+      }
+
+      .button:active {
+        transform: translateY(.25rem);
+      }
+    }
+  }
+
+  .register-account-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 1rem;
+
+    .error-list {
+      margin-top: 1.5rem;
+      list-style: none;
+      padding: 0 1rem;
+      border: .75rem solid rgb(150, 0, 0);
+      border-radius: 1rem;
+      text-align: center;
+      background-color: rgb(200, 0, 0);
+      font-size: 1.25rem;
+    }
+
+    .register-account-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      label {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input {
+          font-size: 1.75rem;
+        }
+      }
+
+      .button {
+        margin-bottom: 2rem;
+        background-color: transparent;
+        color: white;
+        font-size: 1.25rem;
+        padding: .75rem 1.25rem;
+        border: .6rem solid rgba(0, 200, 0, 0.487);
+        border-radius: 1rem;
+        transition: border-color .25s ease-in-out;
+      }
+
+      .button:hover {
+        cursor: pointer;
+        border-color: rgb(0, 200, 0);
+        color: rgb(0, 200, 0);
+      }
+
+      .button:active {
+        transform: translateY(.25rem);
+      }
+
+      .error {
+        color: rgb(255, 0, 0);
+      }
+
+    }
+
+  }
 
 }
 
@@ -413,6 +568,14 @@ body {
     font-size: 3.5rem;
   }
 
+  .login{
+    width: 65vw;
+  }
+
+  .register-account-container {
+    width: 65vw;
+  }
+
   .profile-pic {
     border: .25rem solid white;
   }
@@ -431,6 +594,15 @@ body {
   .app-title {
     font-size: 4rem;
   }
+
+  .login{
+    width: 50vw;
+  }
+
+  .register-account-container {
+    width: 50vw;
+  }
+
 
   .profile-pic {
     border: .35rem solid white;
@@ -451,6 +623,15 @@ body {
     font-size: 5rem;
   }
 
+  .login{
+    width: 70vw;
+  }
+
+  .register-account-container {
+    width: 70vw;
+  }
+
+
   .profile-pic {
     height: 5rem;
     width: 5rem;
@@ -470,6 +651,14 @@ body {
 @media (min-width: 1200px) {
   .app-title {
     font-size: 5rem;
+  }
+
+  .login{
+    width: 70vw;
+  }
+
+  .register-account-container {
+    width: 70vw;
   }
 
   .profile-pic {
