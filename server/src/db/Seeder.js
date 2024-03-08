@@ -12,8 +12,8 @@ class Seeder {
     //    > coins
     // ====================================
     await CoinSeeder.seed()
-    await UserSeeder.seed()
-    await UserCoinSeeder.seed()
+    // await UserSeeder.seed()
+    // await UserCoinSeeder.seed()
     console.log("Done!");
     await connection.destroy();
   }
